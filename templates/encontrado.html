@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Dato Encontrado...</h1>
+    </header>
+    <div class="registro">
+        <table>
+            <thead>
+                <tr>
+                    <td>nombre</td>
+                    <td>apellido</td>
+                    <td>edad</td>
+                    <td>cedula</td>
+                    <td><a href="{{url_for('inicio')}}">x</a></td>
+                </tr>
+            </thead>
+
+            {%for u in usuario%}
+            <tbody>
+
+                <tr>
+
+                    <td>{{u[0]}}</td>
+                    <td>{{u[1]}}</td>
+                    <td>{{u[2]}}</td>
+                    <td>{{u[3]}}</td>
+                    <td class="tdac">
+                        <form action="eliminar" method="POST">
+                            <input type="hidden" name="cedula" value="{{u[3]}}">
+                            <button type="submit">eliminar</button>
+                        </form>
+
+                        <div class="act">___</div>
+                        <a class="botonactual" href="{{url_for('actualizar',cedula=u[3])}}">actualizar</a>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+</body>
+
+</html>

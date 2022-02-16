@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenidos al Sistema</h1>
+        <div class="barra">
+            <nav>
+                <ul>
+                    <li><a class="agregar" href="{{url_for('insertar')}}">Agregar</a></li>
+                </ul>
+            </nav>
+            <form action="buscar" method="POST">
+
+                <label class="buscar" for="cedula"></label>
+                <input class="input" type="number" name="cedula" id="cedula" value="{{lista[0]}}" placeholder="buscar">
+                <button class="botobus" type="submit">🔍</button>
+            </form>
+
+        </div>
+    </header>
+    <div class="tablaindex">
+
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <h3>Nombre</h3>
+                    </td>
+                    <td>
+                        <h3>Apellido</h3>
+                    </td>
+                    <td>
+                        <h3>Edad</h3>
+                    </td>
+                    <td>
+                        <h3>Cedula</h3>
+                    </td>
+                    <td>
+                        <h3>fecha de Ingreso</h3>
+                    </td>
+                    <td>
+                        <h3>Hora de Ingreso</h3>
+                    </td>
+
+                    <td>
+                        <h3>eliminar</h3>
+                    </td>
+
+                </tr>
+            </thead>
+            <tbody>
+                {%for lis in lista%}
+                <tr>
+                    <td>{{lis[0]}}</td>
+                    <td>{{lis[1]}}</td>
+                    <td>{{lis[2]}}</td>
+                    <td>{{lis[3]}}</td>
+                    <td>{{lis[4]}}</td>
+                    <td>{{lis[5]}}</td>
+                    <td>
+                        <form action="eliminar" method="POST">
+                            <input type="hidden" name="cedula" value="{{lis[3]}}">
+                            <button type="submit">eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+
+
+    </div>
+    <div class="mensaje">
+        {% with messages=get_flashed_messages()%}
+        {%if messages%}
+
+        <ul>
+            {%for message in messages%}
+            <li>{{message}}</li>
+            {%endfor%}
+        </ul>
+
+        {%endif%}
+        {%endwith%}
+    </div>
+
+</body>
+
+</html>

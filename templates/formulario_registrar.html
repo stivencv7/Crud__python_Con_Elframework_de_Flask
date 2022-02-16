@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Agregar Usuario</h1>
+    </header>
+
+    <form class="registro" action="Guardar" method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <td> <label for="nombre">Nombre</label></td>
+                    <td> <label for="apellido">Apellido</label></td>
+                    <td><label for="edad">Edad</label></td>
+                    <td> <label for="cedula">Cedula</label></td>
+                    <td>Guardar</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <input class="inregis" type="text" name="nombre" id="nombre"></td>
+                    <td><input class="inregis" type="text" name="apellido" id="apellido"></td>
+                    <td> <input class="inregis" type="number" name="edad" id="edad"></td>
+                    <td> <input class="inregis" type="number" name="cedula" id="cedula"></td>
+                    <td><button class="inregis" type="submit">GUARDAR</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <div class="mensaje">
+        {% with messages=get_flashed_messages()%}
+        {%if messages%}
+
+        <ul>
+            {%for message in messages%}
+            <li>{{message}}</li>
+            {%endfor%}
+        </ul>
+
+        {%endif%}
+        {%endwith%}
+    </div>
+
+</body>
+
+</html>

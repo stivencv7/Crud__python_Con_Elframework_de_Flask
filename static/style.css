@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+header{
+    display:flex;
+    flex-direction: column;
+}
+
+
+
+header h1{
+    background: linear-gradient(to right,#7c3777,#6a0064);
+   -webkit-background-clip: text;
+   background-clip:text;
+   color: transparent;
+}
+
+
+
+.barra{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(to right,#ac7ca9,#6a0064);
+}
+
+header h1{
+    text-align: center;
+    
+}
+
+.tablaindex{
+ display: flex;
+ justify-content: center;
+}
+
+
+
+
+.agregar{
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 2px 4px;
+    background-color: rgb(220, 213, 213);
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+
+}
+.agregar:hover{
+   padding: 5px;
+    
+}
+li{
+    list-style: none;
+}
+
+.buscar{
+    color: white;
+    font-size:20px;
+}
+
+
+
+.input{
+    height: 20px;
+}
+
+
+.botobus:hover{
+    padding: 2px 11px;
+    
+}
+table thead tr td{
+    
+   
+    border: 3px solid black;
+    border-collapse: collapse;
+    background-size: cover;
+    
+}
+
+table {
+   
+    border: 3px solid black;
+    border-collapse: collapse;
+    background-size: cover;
+    width: 909px;
+    text-align: center;
+    margin-top: 4%;
+    
+}
+table tbody tr td{
+   
+    border: 3px solid black;
+    border-collapse: collapse;
+    background-size: cover;
+    
+}
+
+
+table tbody tr td:hover{
+    background-color: #6a0064;
+    color:white;
+    padding: 6px 0px;
+}
+
+table thead tr td{
+    
+   
+    border: 3px solid black;
+    border-collapse: collapse;
+    background-size: cover;
+    
+}
+
+.registro{
+    display: flex;
+    justify-content: center;
+}
+
+.inregis{
+    border: none;
+    text-align: center;
+   
+}
+
+.botonactual{
+    text-decoration: none;
+    border: 1px solid black;
+    background-color: #f3efef;
+    color: black;
+    padding: 2px 2px;
+    border-radius: 3px;
+   
+}
+.ac{
+   margin: 1px 0 0 0;
+}
+
+.tdac{
+    height: 60px;
+}
+.mensaje{
+    display: flex;
+    justify-content: center;
+  
+   
+}
+.mensaje ul{
+    border: 2px solid black;
+    background-color: red;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+}

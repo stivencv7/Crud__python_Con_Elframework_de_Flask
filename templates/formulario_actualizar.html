@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Actualizando Datos....</h1>
+    </header>
+    <form class="registro" action="{{url_for('actualiza')}}" method="POST">
+        <input type="hidden" name="codigo" id="codigo" value="{{usuario[0]}}">
+        <table>
+            <thead>
+                <tr>
+
+                    <td> <label for="nombre">nombre</label></td>
+                    <td> <label for="apellido">apellido</label></td>
+                    <td> <label for="edad">Edad</label></td>
+                    <td>Actualizar</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <input class="inregis" type="text" name="nombre" id="nombre" value="{{usuario[1]}}"></td>
+                    <td><input class="inregis" type="text" name="apellido" id="apellido" value="{{usuario[2]}}"></td>
+                    <td> <input class="inregis" type="number" name="edad" id="edad" value="{{usuario[3]}}"></td>
+                    <td> <button class="inregis" type="submit">actualizar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </form>
+</body>
+
+</html>
